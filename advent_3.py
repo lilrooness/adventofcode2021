@@ -82,11 +82,9 @@ def test_1():
     assert 198 == power_consumption
 
     oxygen_rating = get_rating(data, most_common_wins=True, tie_breaker=1)
-    print("oxygen_rating: {}".format(oxygen_rating))
     assert '10111' == oxygen_rating
 
     co2_rating = get_rating(data, most_common_wins=False, tie_breaker=0)
-    print("co2_rating: {}".format(co2_rating))
     assert '01010' == co2_rating
 
     life_support_rating = get_life_support_rating(data)
@@ -100,7 +98,9 @@ if __name__ == "__main__":
         for line in file.readlines():
             data.append(line.strip())
 
-    # power_consumption = get_power_consumption(data)
+    power_consumption = get_power_consumption(data)
     life_support_rating = get_life_support_rating(data)
-    print(life_support_rating)
+    print("power_consumption: {}".format(power_consumption))
+    print("life_support_rating: {}".format(life_support_rating))
+    
 
